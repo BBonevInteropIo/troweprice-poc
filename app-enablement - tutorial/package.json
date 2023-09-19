@@ -1,0 +1,16 @@
+{
+  "name": "app-enablement---tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+   "scripts": {
+      "start:server": "cd rest-server && npm start",
+      "start:js": "cd js && npm start",
+      "start": "concurrently \"npm run start --prefix ./rest-server\" \"npm run start --prefix ./js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}

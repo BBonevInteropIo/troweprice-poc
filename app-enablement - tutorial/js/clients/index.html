@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/jquery-ui.min.css">
+    <script type="text/javascript" src="./lib/jquery-1.12.4.min.js"></script>
+    <script src="./lib/jquery-ui.min.js"></script>
+
+    <script src="./../node_modules/@glue42/web/dist/web.umd.js"></script>
+    <script src="./../node_modules/@glue42/fdc3/dist/fdc3.umd.js"></script>
+
+
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <span id="glueSpan" class="label label-warning">fdc3 is unavailable</span>
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-center">Clients</h1>
+            </div>
+            <div class="col-md-2">
+                <span id="startClientDetailsBtn" class="btn btn-primary">Client Details</span>
+            </div>
+        </div>
+        <div class="row">
+            <table id="clientsTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>PID</th>
+                        <th>GID</th>
+                        <th>Account Manager</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

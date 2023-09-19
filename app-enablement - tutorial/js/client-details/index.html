@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+
+    <script src="./../node_modules/@glue42/web/dist/web.umd.js"></script>
+    <script src="./../node_modules/@glue42/fdc3/dist/fdc3.umd.js"></script>
+
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <span id="glueSpan" class="label label-warning">fdc3 is unavailable</span>
+            </div>
+            <div class="col-md-8">
+                <h1 class="text-center">Client Details</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="clientStatus"></h3>
+            </div>
+        </div>
+        <div class="row">
+            <table id="clientsTable" class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Full Name</th>
+                        <td data-name></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td data-address></td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td data-phone></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td data-email></td>
+                    </tr>
+                    <tr>
+                        <th>Account Manager</th>
+                        <td data-manager></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
