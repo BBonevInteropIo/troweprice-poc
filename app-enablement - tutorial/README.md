@@ -27,7 +27,16 @@
         },
         "customProperties": {
             "includeInWorkspaces": true
+        },
+        "intents": [
+        {
+          "name": "ViewProfile",
+          "displayName": "View Profile.",
+          "contexts": [
+            "fdc3.contact"
+          ]
         }
+      ]
     }
     ```
     3. Run `npm run updateConfig` command in order for the changes to take effect
