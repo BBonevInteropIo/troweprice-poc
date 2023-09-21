@@ -54,8 +54,10 @@ const clientClickedHandler = async (client) => {
         return;
     }
 
-    const context = { client, type: 'ClientDetails' };
-    await window.fdc3.broadcast(context)
+    const context = { client, type: 'fdc3.contact' };
+
+    // await window.fdc3.broadcast(context)
+    await fdc3.raiseIntent('ViewProfile', context)
 };
 
 const setupIOConnect = async () => {
@@ -65,7 +67,7 @@ const setupIOConnect = async () => {
 
 const fdc3Ready = () => {
   toggleFdc3Available()
-  window.fdc3.joinUserChannel('fdc3.channel.1')
+  // window.fdc3.joinUserChannel('fdc3.channel.1')
 }
 
 // Entry point

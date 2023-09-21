@@ -31,6 +31,16 @@ const subscribeSelectedClient = () => {
     })
 }
 
+const subscribeIntent = async() => {
+    const listener = window.fdc3.addIntentListener('ViewProfile', context => {
+      if (context && context.client) {
+          setFields(context.client);
+      }
+
+      return;
+    });
+}
+
 const setupGlue = async () => {
     const glue = await window.GlueWeb();
     window.glue = glue;
@@ -38,7 +48,7 @@ const setupGlue = async () => {
 
 const fdc3Ready = () => {
   toggleFdc3Available();
-  window.fdc3.joinUserChannel('fdc3.channel.1');
+  // window.fdc3.joinUserChannel('fdc3.channel.1');
 }
 
 const start = async () => {
@@ -50,7 +60,8 @@ const start = async () => {
       window.addEventListener('fdc3Ready', fdc3Ready);
     }
 
-    subscribeSelectedClient();
+    //subscribeSelectedClient();
+    subscribeIntent();
 };
 
 start().catch(console.error);
