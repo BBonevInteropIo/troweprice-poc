@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Account-list",
+    "type": "window",
+    "title": "Account List",
+    "details": {
+        "url": "http://localhost:5555/account-list"
+    },
+    "customProperties": {
+        "includeInWorkspaces": true
+    }
+  },
+  {
+      "name": "account-holdings",
+      "type": "window",
+      "title": "Account Holdings",
+      "details": {
+          "url": "http://localhost:5555/account-holdings"
+      },
+      "customProperties": {
+          "includeInWorkspaces": true
+      },
+      "intents": [
+        {
+          "name": "ViewHoldings",
+          "displayName": "View Holdings.",
+          "contexts": [
+            "fdc3.portfolio"
+          ]
+        }
+      ]
+  }
+]
