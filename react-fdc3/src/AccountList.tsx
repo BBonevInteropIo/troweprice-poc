@@ -4,9 +4,8 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ChannelSelectorWidget from './ChannelSelector';
-import useJoinChannel from './hooks/useJoinChannel';
-import useChannels from './hooks/useChannels';
+import '@glue42/theme/dist/t42bootstrap.bundle.css'
+import ChannelSelector from './ChannelSelector1';
 
 const portfolioContext = 'fdc3.portfolio';
 
@@ -21,8 +20,6 @@ const AccountList = () => {
   const [fdc3Ready, setFdc3Ready] = useState(false);
   const [initComplete, setInitComplete] = useState(false);
   const [availableIntents, setAvailableIntents] = useState<Array<AppIntent>>([]);
-  const channels = useChannels(fdc3.current)
-  const joinChannel = useJoinChannel(fdc3.current)
 
   const _ready = () => {
     fdc3.current = window.fdc3;
@@ -81,12 +78,9 @@ const AccountList = () => {
 
   return (
     <>
-      <div className="px-3 py-1">
-                <ChannelSelectorWidget
-                    channels={channels}
-                    onChannelSelected={joinChannel}
-                />
-            </div>
+      <div className="d-flex align-items-center justify-content-between mb-2">
+        <ChannelSelector defaultChannel="Green" />
+      </div>
       <Stack spacing={2}>
         {accounts.map((account) => (
           <Paper key={account.id} sx={{ padding: 2 }} variant="outlined">
