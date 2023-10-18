@@ -1,6 +1,9 @@
 import { Context, DesktopAgent } from '@glue42/fdc3';
 import { Button, Paper, Stack } from '@mui/material';
 import { useEffect, useState, useRef, useMemo } from 'react';
+import useJoinChannel from './hooks/useJoinChannel';
+import ChannelSelectorWidget from './ChannelSelector';
+import useChannels from './hooks/useChannels';
 
 interface Security {
   id: string;
@@ -28,6 +31,8 @@ const AccountHoldings = () => {
   const [fdc3Ready, setFdc3Ready] = useState(false);
   const [initComplete, setInitComplete] = useState(false);
   const [accountId, setAccountId] = useState<string>('');
+  const channels = useChannels(fdc3.current)
+  const joinChannel = useJoinChannel(fdc3.current)
 
   const _ready = () => {
     fdc3.current = window.fdc3;
@@ -65,6 +70,12 @@ const AccountHoldings = () => {
 
   return (
     <>
+    <div className="px-3 py-1">
+        <ChannelSelectorWidget
+            channels={channels}
+            onChannelSelected={joinChannel}
+        />
+    </div>
       {holdings && (
         <Stack spacing={2}>
           {holdings.map((instrument) => (
